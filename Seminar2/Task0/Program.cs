@@ -12,11 +12,11 @@ int firstDigit = number / 10;
 
 if (firstDigit > lastDigit)
 {
-    Console.WriteLine(firstDigit);
+    Console.WriteLine($"Наибольшая цифра - {firstDigit}");
 }
 else if (firstDigit < lastDigit)
 {
-    Console.WriteLine(lastDigit);
+    Console.WriteLine($"Наибольшая цифра - {lastDigit}");
 }
 else
 {

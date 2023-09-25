@@ -10,7 +10,7 @@ int number = int.Parse(Console.ReadLine());
 
 if (number >= 100 && number<1000)
 {
-    Console.WriteLine("resilt is " + number % 10);
+    Console.WriteLine("result is " + number % 10);
 }
 else
 {
