@@ -38,7 +38,8 @@ int InputAndCheck(string message)
 
 void Distance(int x1, int x2, int y1, int y2)
 {
-    Console.WriteLine($"Длина отрезка составляет: {Math.Sqrt(Math.Pow((x2-x1),2)+Math.Pow((y2-y1),2))}");
+    double result = Math.Sqrt(Math.Pow((x2-x1),2)+Math.Pow((y2-y1),2));
+    Console.WriteLine($"Длина отрезка составляет: {Math.Round(result, 2)}");
 }
 Console.Clear();
 int x1 = InputAndCheck("enter X1");
