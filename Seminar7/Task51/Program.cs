@@ -19,15 +19,9 @@ int[,] GetRandomMatrix(int rows, int columns, int leftBorder, int rightBorder)
 int SumElementsOfMainLine(int[,] matrix)
 {
     int sum = 0;
-    for(int i =0; i < matrix.GetLength(0); i++)
+    for(int i =0; i < matrix.GetLength(0) && i < matrix.GetLength(1); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            if (i == j)
-            {
-                sum += matrix[i, j];
-            }
-        }
+        sum += matrix[i, i];
     }
     return sum;
 }
@@ -45,7 +39,7 @@ void PrintMatrix(int[,] matrix)
 }
 
 const int Rows = 5;
-const int Columns = 5;
+const int Columns = 4;
 const int LeftBorder = 1;
 const int RightBorder = 9;
 
