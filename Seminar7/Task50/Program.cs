@@ -24,12 +24,14 @@ public class Answer {
     {
       // Введите свое решение ниже
         int[,] matrix = new int[n, m];
-        matrix[0, 0] = new Random().Next();
+        int currentValue = 1;
+        //new Random().Next();
         for(int i =0; i < matrix.GetLength(0); i++)
         {
             for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    matrix[i, j] += k;
+                    matrix[i, j] = currentValue;
+                    currentValue += k;
                 }
         }
         return matrix;
@@ -86,8 +88,8 @@ public class Answer {
            n = 3;
            m = 4;
            k = 2;
-           x = 2;
-           y = 3;
+           x = 5;
+           y = 2;
         }
 
         // Не удаляйте строки ниже
