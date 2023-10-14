@@ -3,6 +3,8 @@
 // в каждом столбце.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Serialization.Formatters;
 
 public class Answer {
     public static void PrintArray (int [,] matrix)
@@ -37,9 +39,10 @@ public class Answer {
     static void PrintListAvr (double [] list)
     {
       // Введите свое решение ниже
-        foreach (int number in list)
+        Console.WriteLine("The averages in columns are:");
+        foreach (double number in list)
         {
-            Console.Write(number + "\t");
+            Console.Write($"{number:F2}\t");
         }
         Console.WriteLine();
     }
@@ -47,12 +50,17 @@ public class Answer {
     static double [] FindAverageInColumns (int [,] matrix)
     { 
       // Введите свое решение ниже
-        // int size = matrix.GetLength(1);
-        double[] list = new double[matrix.GetLength(1)];
-        for (int i = 0; i < list.Length; i++)
+        double[] averages = new double[matrix.GetLength(1)];
+        for (int column = 0; column < matrix.GetLength(1); column++)
         {
-            list[i] = 
+            double sum = 0.00;
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                sum += matrix[row, column];
+            }
+            averages[column] = sum/matrix.GetLength(0);
         }
+        return averages;
     }
 
 
