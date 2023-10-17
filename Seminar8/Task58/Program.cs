@@ -5,6 +5,7 @@
 // вызывается метод MatrixMultiplication для умножения матриц, и результат выводится с помощью метода PrintMatrix.
 
 using System;
+using System.Data;
 
 public class Answer
 {
@@ -23,8 +24,18 @@ public class Answer
 
     public static int[,] MatrixMultiplication(int[,] matrixA, int[,] matrixB)
     {  // Введите свое решение ниже
-
-
+        int[,] multipleMatrix = new int [matrixA.GetLength(0), matrixB.GetLength(1)];
+        for (int i = 0; i < matrixA.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrixB.GetLength(1); j++)
+            {
+                for (int k = 0; k < matrixB.GetLength(0); k++)
+                {
+                    multipleMatrix[i, j] += matrixA[i, k] * matrixB[k, j];
+                } 
+            }
+        }
+        return multipleMatrix;
     }
 
     public static void PrintMatrix(int[,] matrix)
